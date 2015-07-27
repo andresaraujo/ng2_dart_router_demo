@@ -39,7 +39,7 @@ void main() {
 
  <a [router-link]="['./home']">home - router-link</a>
  <a [router-link]="['./bar']">bar - router-link</a>
- <a [router-link]="['./foo', {'id': 99}]">bar - router-link</a>
+ <a [router-link]="['./foo', {'id': 99}]">foo - router-link</a>
   '''
 )
 @RouteConfig(const [
