@@ -15,7 +15,7 @@ void main() {
   routerInjectables,
 
   // The base path of your application
-  bind(appBaseHrefToken).toValue('/'),
+  bind(appBaseHrefToken).toValue('/ng2_dart_router_demo'),
 
   // uncomment this if you want to use '#' in your url
   //bind(LocationStrategy).toClass(HashLocationStrategy)
