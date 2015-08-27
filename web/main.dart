@@ -44,7 +44,11 @@ void main() {
 ])
 class AppComp {
   Router router;
-  AppComp(this.router);
+  AppComp(this.router) {
+    router.subscribe((value){
+      print("Route changed to: $value");
+    });
+  }
 
   go(String path) {
     router.navigate('/$path');
