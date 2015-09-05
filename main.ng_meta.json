@@ -1,0 +1,98 @@
+{
+  "AppComp": {
+    "kind": "type",
+    "value": {
+      "id": "AppComp",
+      "selector": "app",
+      "compileChildren": true,
+      "hostProperties": {},
+      "hostListeners": {},
+      "hostActions": {},
+      "hostAttributes": {},
+      "properties": [],
+      "readAttributes": [],
+      "type": 1,
+      "exportAs": null,
+      "callOnDestroy": false,
+      "callOnCheck": false,
+      "callOnInit": false,
+      "callOnChange": false,
+      "callOnAllChangesDone": false,
+      "events": [],
+      "changeDetection": null,
+      "version": 1
+    }
+  },
+  "FooCmp": {
+    "kind": "type",
+    "value": {
+      "id": "FooCmp",
+      "selector": "foo",
+      "compileChildren": true,
+      "hostProperties": {},
+      "hostListeners": {},
+      "hostActions": {},
+      "hostAttributes": {},
+      "properties": [],
+      "readAttributes": [],
+      "type": 1,
+      "exportAs": null,
+      "callOnDestroy": false,
+      "callOnCheck": false,
+      "callOnInit": false,
+      "callOnChange": false,
+      "callOnAllChangesDone": false,
+      "events": [],
+      "changeDetection": null,
+      "version": 1
+    }
+  },
+  "BarCmp": {
+    "kind": "type",
+    "value": {
+      "id": "BarCmp",
+      "selector": "bar",
+      "compileChildren": true,
+      "hostProperties": {},
+      "hostListeners": {},
+      "hostActions": {},
+      "hostAttributes": {},
+      "properties": [],
+      "readAttributes": [],
+      "type": 1,
+      "exportAs": null,
+      "callOnDestroy": false,
+      "callOnCheck": false,
+      "callOnInit": false,
+      "callOnChange": false,
+      "callOnAllChangesDone": false,
+      "events": [],
+      "changeDetection": null,
+      "version": 1
+    }
+  },
+  "HomeComp": {
+    "kind": "type",
+    "value": {
+      "id": "HomeComp",
+      "selector": "home",
+      "compileChildren": true,
+      "hostProperties": {},
+      "hostListeners": {},
+      "hostActions": {},
+      "hostAttributes": {},
+      "properties": [],
+      "readAttributes": [],
+      "type": 1,
+      "exportAs": null,
+      "callOnDestroy": false,
+      "callOnCheck": false,
+      "callOnInit": false,
+      "callOnChange": false,
+      "callOnAllChangesDone": false,
+      "events": [],
+      "changeDetection": null,
+      "version": 1
+    }
+  }
+}
