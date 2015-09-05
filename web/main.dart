@@ -8,7 +8,9 @@ import 'package:angular2/router.dart'
         RouteParams,
         Router,
         ROUTER_DIRECTIVES,
-        ROUTER_BINDINGS;
+        ROUTER_BINDINGS,
+        LocationStrategy,
+        HashLocationStrategy;
 
 void main() {
   bootstrap(AppComp, [
@@ -18,7 +20,7 @@ void main() {
     bind(APP_BASE_HREF).toValue('/ng2_dart_router_demo'),
 
     // uncomment this if you want to use '#' in your url
-    //bind(APP_BASE_HREF).toClass(HashLocationStrategy)
+    bind(LocationStrategy).toClass(HashLocationStrategy)
   ]);
 }
 
