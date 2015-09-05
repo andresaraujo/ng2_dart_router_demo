@@ -1,6 +1,5 @@
 import 'package:angular2/angular2.dart' show Component, View, bind;
-import 'package:angular2/bootstrap.dart' show Component, View, bind, bootstrap;
-import 'package:angular2/di.dart' show bind;
+import 'package:angular2/bootstrap.dart' show bootstrap;
 import 'package:angular2/router.dart'
     show
         APP_BASE_HREF,
