@@ -15,4 +15,4 @@ dependencies:
 transformers:
   - dart_to_js_script_rewriter
   - angular2:
-      entry_points: web/main.dartchore: upgrate to asdsad
+      entry_points: web/main.dart
