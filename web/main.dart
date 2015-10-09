@@ -1,20 +1,14 @@
 import 'package:angular2/angular2.dart' show Component, View, bind;
 import 'package:angular2/bootstrap.dart' show bootstrap;
 import 'package:angular2/router.dart'
-    show
-        APP_BASE_HREF,
-        Route,
-        RouteConfig,
-        RouteParams,
-        Router,
-        ROUTER_DIRECTIVES,
-        ROUTER_BINDINGS,
-        LocationStrategy,
-        HashLocationStrategy;
+    show APP_BASE_HREF, HashLocationStrategy, LocationStrategy, ROUTER_BINDINGS, ROUTER_DIRECTIVES, ROUTER_PRIMARY_COMPONENT, Route, RouteConfig, RouteParams, Router;
 
 void main() {
   bootstrap(AppComp, [
     ROUTER_BINDINGS,
+
+    //Router primary component
+    bind(ROUTER_PRIMARY_COMPONENT).toValue(AppComp),
 
     // The base path of your application
     bind(APP_BASE_HREF).toValue('/ng2_dart_router_demo'),
@@ -36,14 +30,14 @@ void main() {
  <!-- The component templates will be rendered here -->
  <router-outlet></router-outlet>
 
- <a [router-link]="['./home']">home - router-link</a>
- <a [router-link]="['./bar']">bar - router-link</a>
- <a [router-link]="['./foo', {'id': 99}]">foo - router-link</a>
+ <a [router-link]="['./Home']">home - router-link</a>
+ <a [router-link]="['./Bar']">bar - router-link</a>
+ <a [router-link]="['./Foo', {'id': 99}]">foo - router-link</a>
   ''')
 @RouteConfig(const [
-  const Route(path: '/foo/:id', component: FooCmp, as: 'foo'),
-  const Route(path: '/bar', component: BarCmp, as: 'bar'),
-  const Route(path: '/home', component: HomeComp, as: 'home'),
+  const Route(path: '/foo/:id', component: FooCmp, as: 'Foo'),
+  const Route(path: '/bar', component: BarCmp, as: 'Bar'),
+  const Route(path: '/home', component: HomeComp, as: 'Home'),
   const Route(path: '/', component: HomeComp)
 ])
 class AppComp {
@@ -55,7 +49,7 @@ class AppComp {
   }
 
   go(String path) {
-    router.navigate('/$path');
+    router.navigateByUrl('/$path');
   }
 }
 
