@@ -1,20 +1,20 @@
-import 'package:angular2/angular2.dart' show Component, View, bind;
+import 'package:angular2/angular2.dart' show Component, View, provide;
 import 'package:angular2/bootstrap.dart' show bootstrap;
 import 'package:angular2/router.dart'
-    show APP_BASE_HREF, HashLocationStrategy, LocationStrategy, ROUTER_BINDINGS, ROUTER_DIRECTIVES, ROUTER_PRIMARY_COMPONENT, Route, RouteConfig, RouteParams, Router;
+    show APP_BASE_HREF, HashLocationStrategy, LocationStrategy, ROUTER_PROVIDERS, ROUTER_DIRECTIVES, ROUTER_PRIMARY_COMPONENT, Route, RouteConfig, RouteParams, Router;
 
 void main() {
   bootstrap(AppComp, [
-    ROUTER_BINDINGS,
+    ROUTER_PROVIDERS,
 
     //Router primary component
-    bind(ROUTER_PRIMARY_COMPONENT).toValue(AppComp),
+    provide(ROUTER_PRIMARY_COMPONENT, useValue: AppComp),
 
     // The base path of your application
-    bind(APP_BASE_HREF).toValue('/ng2_dart_router_demo'),
+    provide(APP_BASE_HREF, useValue: '/ng2_dart_router_demo'),
 
     // uncomment this if you want to use '#' in your url
-    bind(LocationStrategy).toClass(HashLocationStrategy)
+    provide(LocationStrategy, useClass: HashLocationStrategy)
   ]);
 }
 
