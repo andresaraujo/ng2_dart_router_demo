@@ -1,4 +1,4 @@
-import 'package:angular2/angular2.dart' show Component, View, provide;
+import 'package:angular2/angular2.dart' show Component, provide;
 import 'package:angular2/bootstrap.dart';
 import 'package:angular2/router.dart'
     show
@@ -28,8 +28,8 @@ void main() {
   ]);
 }
 
-@Component(selector: 'app')
-@View(
+@Component(
+    selector: 'app',
     directives: const [ROUTER_DIRECTIVES],
     template: '''
  <button (click)="go('home')">home - router.navigate</button>
@@ -45,9 +45,9 @@ void main() {
  <a [router-link]="['./Foo', {'id': 99}]">foo - router-link</a>
   ''')
 @RouteConfig(const [
-  const Route(path: '/foo/:id', component: FooCmp, as: 'Foo'),
-  const Route(path: '/bar', component: BarCmp, as: 'Bar'),
-  const Route(path: '/home', component: HomeComp, as: 'Home'),
+  const Route(path: '/foo/:id', component: FooCmp, name: 'Foo'),
+  const Route(path: '/bar', component: BarCmp, name: 'Bar'),
+  const Route(path: '/home', component: HomeComp, name: 'Home'),
   const Route(path: '/', component: HomeComp)
 ])
 class AppComp {
@@ -63,8 +63,7 @@ class AppComp {
   }
 }
 
-@Component(selector: 'foo')
-@View(template: '<div>foo {{id}}</div>')
+@Component(selector: 'foo', template: '<div>foo {{id}}</div>')
 class FooCmp {
   String id;
   FooCmp(RouteParams routeParams) {
@@ -72,12 +71,10 @@ class FooCmp {
   }
 }
 
-@Component(selector: 'bar')
-@View(template: '<div>bar</div>')
+@Component(selector: 'bar', template: '<div>bar</div>')
 class BarCmp {}
 
-@Component(selector: 'home')
-@View(template: '<div>Hello {{name}}</div>')
+@Component(selector: 'home', template: '<div>Hello {{name}}</div>')
 class HomeComp {
   String name;
   HomeComp() : name = 'Friend' {}
