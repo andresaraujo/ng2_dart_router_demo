@@ -40,9 +40,9 @@ void main() {
  <!-- The component templates will be rendered here -->
  <router-outlet></router-outlet>
 
- <a [router-link]="['./Home']">home - router-link</a>
- <a [router-link]="['./Bar']">bar - router-link</a>
- <a [router-link]="['./Foo', {'id': 99}]">foo - router-link</a>
+ <a [routerLink]="['./Home']">home - routerLink</a>
+ <a [routerLink]="['./Bar']">bar - routerLink</a>
+ <a [routerLink]="['./Foo', {'id': 99}]">foo - routerLink</a>
   ''')
 @RouteConfig(const [
   const Route(path: '/foo/:id', component: FooCmp, name: 'Foo'),
@@ -63,6 +63,9 @@ class AppComp {
   }
 }
 
+@Component(selector: 'bar', template: '<div>bar</div>')
+class BarCmp {}
+
 @Component(selector: 'foo', template: '<div>foo {{id}}</div>')
 class FooCmp {
   String id;
@@ -70,9 +73,6 @@ class FooCmp {
     id = routeParams.get("id");
   }
 }
-
-@Component(selector: 'bar', template: '<div>bar</div>')
-class BarCmp {}
 
 @Component(selector: 'home', template: '<div>Hello {{name}}</div>')
 class HomeComp {
